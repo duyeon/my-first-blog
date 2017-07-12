@@ -15,11 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from django.contrib.auth.views import login
-from demotext.views import keyboard, home
+from django.conf.urls import include
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^keyboard/',keyboard, name='keyboard' ),
-    url(r'^$', home, name='home'),
-    #url(r'^$', ),
+    url(r'', include('blog.urls')),
+
 ]
